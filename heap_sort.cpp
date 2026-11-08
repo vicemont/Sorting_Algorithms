@@ -27,11 +27,11 @@ void heapify(int* nums, int n, int i)
 
 void heapSort(int* nums, int numsSize)
 {
-    // 1. Build the Max Heap
+    // Buid the Max Heap
     for(int i = numsSize/2 - 1; i >= 0; i--)
         heapify(nums, numsSize, i);
 
-    // 2. Extract elements from heap
+    //Extract elements from heap
     for(int i = numsSize - 1; i > 0; i--) {
 
         // Move largest element to the end
@@ -44,15 +44,4 @@ void heapSort(int* nums, int numsSize)
     }
 }
 
-int main()
-{
-    int arr[5] = {1, 2, 45, 78, 9};
 
-    heapSort(arr, 5);
-
-    for(int i = 0; i < 5; i++) {
-        cout << arr[i] << " ";
-    }
-
-    return 0;
-}
