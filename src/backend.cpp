@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
     string algorithm = argv[1];
     int selectedSize = stoi(argv[2]);
 
-    ifstream file("test_arrays.txt");
+   ifstream file("/home/vicky/Sorting_Algorithms/data/test_arrays.txt");
 
     if (!file.is_open()) {
         cout << "Could not open test_arrays.txt";

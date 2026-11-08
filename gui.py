@@ -4,7 +4,7 @@ from tkinter import ttk
 import subprocess
 from pathlib import Path
 
-folder = Path(__file__).resolve().parent
+folder = Path(__file__).resolve().parent.parent
 
 def run_algorithm():
     algorithm = algorithm_choice.get()
@@ -16,11 +16,11 @@ def run_algorithm():
 
     try:
         result = subprocess.run(
-            [str(folder / "SortingBackend"), algorithm, size],
-            cwd=folder,
-            capture_output=True,
-            text=True
-        )
+    [str(Path(__file__).resolve().parent / "SortingBackend"), algorithm, size],
+    cwd=project_folder,
+    capture_output=True,
+    text=True
+)
 
         if result.returncode == 0:
             result_label.config(text=result.stdout)
